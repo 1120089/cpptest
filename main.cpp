@@ -1,46 +1,18 @@
-
-
-#include <iostream>
+#include <iostream>  
 using namespace std;
 
-void calculate_average() {
-    float scores[3];
-    float average = 0;
-    
-    
-    for (int i = 0; i < 3; ++i) {
-        cout << "請輸入第" << i + 1 << "次分數: ";
-        cin >> scores[i];
-    }
+int main() {
+    int sum = 0; 
 
-    
-    for (int i = 0; i < 3; ++i) {
-        average += scores[i];
-    }
-    average /= 3;
+    for (int i = 1; i <= 10; i++) { 
+        sum += i; 
 
-    
-    cout << "平均分數: " << average << endl;
-
-    
-    bool is_fail = false;
-    for (int i = 0; i < 3; ++i) {
-        if (scores[i] < 40) {
-            is_fail = true;
-            break;
+        if (i % 2 == 0) { 
+            cout << "偶數：" << i << endl;
         }
     }
 
-    if (is_fail || average < 60) {
-        cout << "此學科不及格" << endl;
-    } else {
-        cout << "此學科及格" << endl;
-    }
-}
+    cout << "1 到 10 的總和是：" << sum << endl;
 
-int main() {
-    calculate_average();
     return 0;
 }
-
-
